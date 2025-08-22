@@ -80,14 +80,13 @@ def get_perlin_noise(x, y, ampliation: float):
     final_interpolation = linear_interpolation(top_interpolation, bottom_interpolation, fade_y)
     return final_interpolation
 
-def expand_noise(noise, expand_to: float | int, round_to: int = 2):
-    if noise <= 0:
-        return 0
+def expand_noise(noise: float, expand_to: float | int = 100, round_to: int = 2):
     noise *= expand_to
+
     if round_to == 0:
         return int(noise)
-    noise = round(noise, round_to)
-    return noise
+
+    return round(noise, round_to)
 
 def get_color_noise(perlin_noise, type: str = 'rgb', is_num: bool = True):
     if not is_num:
@@ -104,6 +103,6 @@ def get_color_noise(perlin_noise, type: str = 'rgb', is_num: bool = True):
     else:
         color = int(perlin_noise * 255)
         return (color, color, color)
-    
+
 if __name__ == '__main__':
     print(f'{seed = }')
