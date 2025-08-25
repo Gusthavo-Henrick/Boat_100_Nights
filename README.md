@@ -4,6 +4,8 @@
 The code works using a screen to display the result of the perlin noise.
 The result gotten the code transform into a block with a color, and then the screen draw a rect with the color of the block.
 
+![Demonstration](perlin_noise_demonstration.png)
+
 # Dependences
 This project need pygame to display the result, to install run the command:
 
